@@ -32,8 +32,6 @@ function App() {
   const [myCryptos, setMyCryptos] = useState([]);
   const [ISO] = useState('usd');
 
-  console.log(isLoading);
-
   const checkLoggedIn = async () => {
     setLoggedIn(await isLoggedIn());
   };

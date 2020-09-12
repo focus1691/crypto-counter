@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const cors = require('cors');
 const express = require('express');
-const http = require('http');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
@@ -78,36 +77,9 @@ router.use('/register', registerRouter);
 router.use('/logout', logoutRouter);
 router.use('/coins', coinsRouter);
 router.get('/hello', (req, res) => {
-  res.send("Hello")
-})
+  res.send('Hello');
+});
 
-app.use('/.netlify/functions/api', router)
-// const exitHandler = (options) => {
-//   if (options.exit) process.exit();
-// };
+app.use('/.netlify/functions/api', router);
 
-// // App is closing
-// process.on('exit', exitHandler.bind(null, {
-//   cleanup: true,
-// }));
-
-// // Catches ctrl+c event
-// process.on('SIGINT', exitHandler.bind(null, {
-//   exit: true,
-// }));
-
-// // Catches "kill pid" (for example: nodemon restart)
-// process.on('SIGUSR1', exitHandler.bind(null, {
-//   exit: true,
-// }));
-
-// process.on('SIGUSR2', exitHandler.bind(null, {
-//   exit: true,
-// }));
-
-// // Catches uncaught exceptions
-// process.on('uncaughtException', exitHandler.bind(null, {
-//   exit: true,
-// }));
-
-module.exports = app
+module.exports = app;

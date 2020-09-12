@@ -1,12 +1,4 @@
-const serverless = require("serverless-http")
-const app = require("../../server")
-
-// process.on("uncaughtException", err => {
-//   console.error(`uncaughtException ${err.toString()}`);
-// });
-
-// process.on("unhandledRejection", reason => {
-//   console.error(`unhandledRejection ${reason}`);
-// });
+const serverless = require('serverless-http');
+const app = require('../../server');
 
 module.exports.handler = serverless(app);
