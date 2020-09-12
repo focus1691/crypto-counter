@@ -1,3 +1,5 @@
+[Demo](https://crypto-counter.netlify.app)
+
 ## Overview
 
 A cryptocurrency web application to add your crypto investments and track their performance overtime. You can count your portfolio of cryptocurrencies across multiple wallets.
@@ -18,6 +20,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - [x] Authentication.
 - [x] Session.
 - [x] Responsive pages.
+- [x] Serverless.
+- [x] Counting cryptocurrencies.
 
 ## TODO
 
@@ -57,3 +61,8 @@ Required environmental variables in this project include:
 #### `.env`
 
 I use my own MongoDB Atlas environmental variables in [.env](.env) and they should be replaced with your own credentials.
+
+
+## Netlify Functions
+
+The server uses Netlify Lambda Functions with Express.
