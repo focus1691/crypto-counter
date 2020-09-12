@@ -4,7 +4,7 @@ const Logout = () => {
   const history = useHistory();
 
   const logout = async () => {
-    await fetch('/logout');
+    await fetch('/.netlify/functions/api/logout');
     history.push('/');
   };
 

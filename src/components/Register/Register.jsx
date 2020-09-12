@@ -34,7 +34,7 @@ const Register = () => {
       confirmPassword: e.currentTarget['confirm-password'].value,
     };
 
-    const response = await fetch('/register', {
+    const response = await fetch('/.netlify/functions/api/register', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

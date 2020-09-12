@@ -40,12 +40,12 @@ router.post('/', async (req, res) => {
     user.save();
     req.logIn(user, (err) => {
       if (err) return res.status(400).json({ error: 'Failed to create user.' });
-      res.status(201).json({
+      return res.json({
         user,
       });
     });
 
-    return res.status(201).json({ message: 'User created' });
+    // return res.status(201).json({ message: 'User created' });
   } catch (err) {
     return res.status(400).json({ error: 'Failed to create user.' });
   }

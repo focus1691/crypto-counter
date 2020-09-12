@@ -46,7 +46,7 @@ function App() {
 
   const getMyCoins = useCallback(async () => {
     if (!loggedIn) return;
-    const response = await fetch('/coins');
+    const response = await fetch('/.netlify/functions/api/coins');
     const { coins } = await response.json();
     let total = 0;
     let buyTotal = 0;
@@ -87,7 +87,7 @@ function App() {
 
   const deleteCoin = useCallback((coin) => async () => {
     setIsLoading(true);
-    const response = await fetch('/coins', {
+    const response = await fetch('/.netlify/functions/api/coins', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

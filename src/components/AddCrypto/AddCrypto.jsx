@@ -28,7 +28,7 @@ const AddCrypto = ({ cryptos, getMyCoins, setIsLoading }) => {
       id, name, symbol, quantity, purchaseDate: date,
     };
 
-    const response = await fetch('/coins', {
+    const response = await fetch('/.netlify/functions/api/coins', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

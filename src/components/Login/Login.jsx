@@ -26,7 +26,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('/auth', {
+    const response = await fetch('/.netlify/functions/api/auth', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
