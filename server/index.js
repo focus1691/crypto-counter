@@ -20,7 +20,6 @@ const {
   DB_PASS,
   DB_CLUSTER,
   DB_NAME,
-  DB_URL,
 } = process.env;
 
 let mng;
@@ -36,7 +35,7 @@ const connect = async () => {
       mongoose.set('debug', true);
     }
     mongoose.set('useCreateIndex', true);
-    mng = await mongoose.connect(DB_URL, {
+    mng = await mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@${DB_CLUSTER}.nppgy.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`, {
       keepAlive: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
