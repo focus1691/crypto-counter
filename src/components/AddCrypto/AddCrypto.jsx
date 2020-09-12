@@ -46,6 +46,8 @@ const AddCrypto = ({ cryptos, getMyCoins, setIsLoading }) => {
     }
   };
 
+  console.log(error)
+
   return (
     <>
       <div className="flex items-center space-x-4 m-5 p-6 bg-purple-200 border-solid border border-purple-700 rounded-lg w-10/12">

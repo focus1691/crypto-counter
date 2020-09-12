@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 //* Core Components
 import Header from '../Header';
 import Footer from '../Footer';
@@ -101,9 +101,9 @@ const Register = () => {
             <button className="bg-black hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Register
             </button>
-            <a className="inline-block align-baseline font-bold text-sm text-white hover:text-gray-300" href="/login">
+            <Link className="inline-block align-baseline font-bold text-sm text-white hover:text-gray-300" to="/login">
               Already Registered?
-            </a>
+            </Link>
           </div>
         </form>
       </div>

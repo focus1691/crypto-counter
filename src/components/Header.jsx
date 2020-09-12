@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Header = ({ loggedIn }) => {
   const history = useHistory();
@@ -19,11 +19,11 @@ const Header = ({ loggedIn }) => {
 
         <div className="flex space-x-4">
           {loggedIn
-            ? <a href="logout" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-purple-400 mt-4 lg:mt-0">Logout</a>
+            ? <Link to="logout" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-purple-400 mt-4 lg:mt-0">Logout</Link>
             : (
               <>
-                <a href="login" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-purple-400 mt-4 lg:mt-0">Login</a>
-                <a href="register" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-purple-400 mt-4 lg:mt-0">Register</a>
+                <Link to="login" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-purple-400 mt-4 lg:mt-0">Login</Link>
+                <Link to="register" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-purple-400 mt-4 lg:mt-0">Register</Link>
               </>
             )}
         </div>
