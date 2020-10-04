@@ -18,6 +18,7 @@ import { percentChange } from './utils/calculations';
 const override = css`
   display: block;
   margin: 0 auto;
+  background-color: #f7fafc;
   border-color: red;
   height: 100vh;
 `;
@@ -68,9 +69,9 @@ function App() {
       }
       if (coins[i].marketData && coins[i].buyTimeMarketData) {
         // eslint-disable-next-line no-multi-assign
-        const buyPrice = coins[i].buyPrice = coins[i].buyTimeMarketData.current_price[ISO];
+        const buyPrice = (coins[i].buyPrice = coins[i].buyTimeMarketData.current_price[ISO]);
         // eslint-disable-next-line no-multi-assign
-        const price = coins[i].price = coins[i].marketData.current_price[ISO];
+        const price = (coins[i].price = coins[i].marketData.current_price[ISO]);
         coins[i].change = percentChange(buyPrice, price);
 
         buyTotal += coins[i].buyTimeMarketData.current_price[ISO] * coins[i].quantity;
@@ -83,21 +84,24 @@ function App() {
     setIsLoading(false);
   }, [ISO, loggedIn]);
 
-  const deleteCoin = useCallback((coin) => async () => {
-    setIsLoading(true);
-    const response = await fetch('/.netlify/functions/api/coins', {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      method: 'DELETE',
-      body: JSON.stringify({
-        _id: coin._id,
-      }),
-    });
-    if (response.status === 200) getMyCoins();
-    else setIsLoading(false);
-  }, [getMyCoins]);
+  const deleteCoin = useCallback(
+    (coin) => async () => {
+      setIsLoading(true);
+      const response = await fetch('/.netlify/functions/api/coins', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        method: 'DELETE',
+        body: JSON.stringify({
+          _id: coin._id,
+        }),
+      });
+      if (response.status === 200) getMyCoins();
+      else setIsLoading(false);
+    },
+    [getMyCoins]
+  );
 
   const updateViewport = (isTermsOpen) => {
     setMinViewportH(!isTermsOpen);
@@ -120,30 +124,20 @@ function App() {
     <>
       <Header loggedIn={loggedIn} />
       {isLoading ? (
-        <HashLoader
-          css={override}
-          size={50}
-          color="#9f7aea"
-          loading={isLoading}
-        />
-      )
-        : (
-          <div className={`mb-20${minViewportH ? ' min-h-screen' : ''}`}>
-            <div className="flex items-center justify-center">
-              <Summary total={total} buyTotal={buyTotal} />
-            </div>
-            <div className="flex items-center justify-center">
-              <AddCrypto
-                cryptos={cryptos}
-                getMyCoins={getMyCoins}
-                setIsLoading={setIsLoading}
-              />
-            </div>
-            <div className="flex items-center justify-center overflow-x-auto">
-              <Portfolio coins={myCryptos} deleteCoin={deleteCoin} />
-            </div>
+        <HashLoader css={override} size={50} color="#9f7aea" loading={isLoading} />
+      ) : (
+        <div className={` mb-20${minViewportH ? ' min-h-screen' : ''} bg-gray-100 h-screen `}>
+          <div className="flex items-center bg-gray-100 justify-center">
+            <Summary total={total} buyTotal={buyTotal} />
           </div>
-        )}
+          <div className="flex items-center justify-center ">
+            <AddCrypto cryptos={cryptos} getMyCoins={getMyCoins} setIsLoading={setIsLoading} />
+          </div>
+          <div className="flex justify-center items-center justify-center  px-auto overflow-x-auto sm:p-0  sm:items-center bg-gray-100 sm:justify-center ">
+            <Portfolio coins={myCryptos} deleteCoin={deleteCoin} />
+          </div>
+        </div>
+      )}
       <Footer updateViewport={updateViewport} />
     </>
   );

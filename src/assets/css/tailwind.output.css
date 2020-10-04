@@ -591,31 +591,18 @@ video {
 }
 
 @-webkit-keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
   to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
   to {
     transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes ping {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
   75%, 100% {
     transform: scale(2);
     opacity: 0;
@@ -623,11 +610,6 @@ video {
 }
 
 @keyframes ping {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
   75%, 100% {
     transform: scale(2);
     opacity: 0;
@@ -635,20 +617,12 @@ video {
 }
 
 @-webkit-keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-
   50% {
     opacity: .5;
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-
   50% {
     opacity: .5;
   }
@@ -662,7 +636,7 @@ video {
   }
 
   50% {
-    transform: translateY(0);
+    transform: none;
     -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
             animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
@@ -676,7 +650,7 @@ video {
   }
 
   50% {
-    transform: translateY(0);
+    transform: none;
     -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
             animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
@@ -6348,6 +6322,10 @@ video {
   height: 100vh;
 }
 
+.h-form-height {
+  height: 80vh;
+}
+
 .text-xs {
   font-size: 0.75rem;
 }
@@ -7686,6 +7664,10 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-9xl {
+  min-height: 85vh;
 }
 
 .min-w-0 {
@@ -23686,6 +23668,10 @@ video {
     height: 100vh;
   }
 
+  .sm\:h-form-height {
+    height: 80vh;
+  }
+
   .sm\:text-xs {
     font-size: 0.75rem;
   }
@@ -25024,6 +25010,10 @@ video {
 
   .sm\:min-h-screen {
     min-height: 100vh;
+  }
+
+  .sm\:min-h-9xl {
+    min-height: 85vh;
   }
 
   .sm\:min-w-0 {
@@ -41025,6 +41015,10 @@ video {
     height: 100vh;
   }
 
+  .md\:h-form-height {
+    height: 80vh;
+  }
+
   .md\:text-xs {
     font-size: 0.75rem;
   }
@@ -42363,6 +42357,10 @@ video {
 
   .md\:min-h-screen {
     min-height: 100vh;
+  }
+
+  .md\:min-h-9xl {
+    min-height: 85vh;
   }
 
   .md\:min-w-0 {
@@ -58364,6 +58362,10 @@ video {
     height: 100vh;
   }
 
+  .lg\:h-form-height {
+    height: 80vh;
+  }
+
   .lg\:text-xs {
     font-size: 0.75rem;
   }
@@ -59702,6 +59704,10 @@ video {
 
   .lg\:min-h-screen {
     min-height: 100vh;
+  }
+
+  .lg\:min-h-9xl {
+    min-height: 85vh;
   }
 
   .lg\:min-w-0 {
@@ -75703,6 +75709,10 @@ video {
     height: 100vh;
   }
 
+  .xl\:h-form-height {
+    height: 80vh;
+  }
+
   .xl\:text-xs {
     font-size: 0.75rem;
   }
@@ -77041,6 +77051,10 @@ video {
 
   .xl\:min-h-screen {
     min-height: 100vh;
+  }
+
+  .xl\:min-h-9xl {
+    min-height: 85vh;
   }
 
   .xl\:min-w-0 {
@@ -87374,4 +87388,3 @@ video {
             animation: bounce 1s infinite;
   }
 }
-

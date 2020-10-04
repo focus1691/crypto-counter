@@ -52,27 +52,46 @@ const Login = () => {
   return (
     <>
       <Header loggedIn={loggedIn} />
-      <div className="flex items-center justify-center min-h-screen bg-purple-200">
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-purple-500 w-full max-w-lg" noValidate onSubmit={handleSubmit}>
-          {error ? <p className="text-yellow-300 font-extrabold text-base italic flex justify-center  pb-6">{error}</p> : null}
+      <div className="flex items-center justify-center min-h-9xl  bg-gray-200">
+        <form
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8  bg-white shadow-lg overflow-hidden w-full max-w-lg"
+          noValidate
+          onSubmit={handleSubmit}
+        >
+          {error ? <p className="text-red-600 font-extrabold text-base italic flex justify-center  pb-6">{error}</p> : null}
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
-              <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="username">
+              <label className="block uppercase tracking-wide text-gray-700 text-xs font-medium text-base font-bold mb-2" htmlFor="username">
                 Email
               </label>
-              <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="login-username" name="username" type="username" placeholder="Email Address" />
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="login-username"
+                name="username"
+                type="username"
+                placeholder="Email Address"
+              />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
-              <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="password">
+              <label className="block font-medium text-base uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="password">
                 Password
               </label>
-              <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="login-password" name="password" type="password" placeholder="******************" />
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="login-password"
+                name="password"
+                type="password"
+                placeholder="******************"
+              />
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-black hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button
+              className="bg-black hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
               Sign In
             </button>
             <a className="inline-block align-baseline font-bold text-sm text-white hover:text-gray-300" href="/">
